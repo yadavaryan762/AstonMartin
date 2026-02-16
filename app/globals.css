@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-aston-black: #0b0c0b;
+  --color-aston-lime: #D7E600;
+  --color-sterling-silver: #E6E6E6;
+  --color-carbon-fiber: #1c1c1c;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  If you'd like to use the new default border color, you can remove this
+  block.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
+:root {
+  --aston-black: #0b0c0b;
+  --aston-lime: #D7E600;
+  --sterling-silver: #E6E6E6;
+  --carbon-fiber: #1c1c1c;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--aston-black);
+  color: white;
+}
+
+::selection {
+  background-color: var(--aston-lime);
+  color: var(--aston-black);
 }
