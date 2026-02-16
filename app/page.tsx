@@ -17,7 +17,7 @@ export default function Home() {
   // Calculate total frames to display
   // We have 240 frames total.
   const TOTAL_FRAMES = 240;
-  const IMAGE_FOLDER = '/images/db11-sequence';
+  const IMAGE_FOLDER = 'images/db11-sequence';
 
   return (
     <main className="bg-aston-black min-h-screen">
